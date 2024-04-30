@@ -1,9 +1,10 @@
 'use client'
-import Container  from './Container'
+import Container  from '../Container'
 import React from 'react'
 import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
+import Modal from '../modals/Modal'
 
 const Navbar = () => {
   return (
