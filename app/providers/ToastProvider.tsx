@@ -20,7 +20,6 @@ const ToastProvider = () => {
         theme="light"
         transition={Flip}
       />
-      <ToastContainer />
     </>
     
   )

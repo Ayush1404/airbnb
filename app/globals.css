@@ -5,9 +5,9 @@
 html,body,:root{
     height: 100%;
 }
-
-body {
-    -moz-transform: scale(0.8, 0.8); /* Moz-browsers */
-    zoom: 0.8; /* Other non-webkit browsers */
-    zoom: 80%; /* Webkit browsers */
+body{
+    zoom: 0.8;
+}
+.leaflet-bottom,.leaflet-control,.leaflet-pane,.leaflet-top{
+    z-index: 0 !important;
 }
