@@ -23,7 +23,7 @@ export async function POST(req:Request){
 
         Object.keys(body).forEach((value)=>{
             if(!body[value]){
-                NextResponse.error()
+                return NextResponse.error()
             }
         })
         const listing = await prisma.listing.create({
@@ -36,7 +36,7 @@ export async function POST(req:Request){
                 bathroomCount,
                 guestCount,
                 price:parseInt(price,10),
-                locationValue:JSON.stringify(location),
+                locationValue:location.value,
                 userId:currentUser.id
             }
         })

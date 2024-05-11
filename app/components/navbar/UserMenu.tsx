@@ -60,7 +60,7 @@ const UserMenu:React.FC<UserMenuProps> = ({
             />
             <MenuItem 
               onClick={()=>{}} 
-              label='My favourites'
+              label='My favorites'
             />
             <MenuItem 
               onClick={()=>{}} 

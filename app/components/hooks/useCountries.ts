@@ -12,7 +12,7 @@ const useCountries = () =>{
     const getAll = () => formmatedCountries 
 
     const getByValue = (value:string) =>{
-        return formmatedCountries.find((country)=>{country.value === value})
+        return formmatedCountries.find((country)=>country.value === value)
     }
 
     return {

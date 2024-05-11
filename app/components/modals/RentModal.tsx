@@ -198,7 +198,7 @@ const RentModal = () => {
             />
             <hr />
             <Input
-                id='desrciption'
+                id='description'
                 label='Description'
                 disabled={isLoading}
                 register={register}

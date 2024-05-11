@@ -5,7 +5,6 @@ import Navbar from "./components/navbar/Navbar";
 import RegisterModal from "./components/modals/RegisterModal";
 import ToastProvider from "./providers/ToastProvider";
 import LoginModal from "./components/modals/LoginModal";
-import ClientOnly from "./components/ClientOnly";
 import { getCurrentUser } from "./actions/getCurrentUser";
 import RentModal from "./components/modals/RentModal";
 
@@ -25,14 +24,16 @@ export default async function RootLayout({
   return (
     <html lang="en"> 
       <body className={nunito.className}>
-      <ClientOnly>
+      
         <LoginModal />
         <RegisterModal />
         <RentModal />
         <Navbar currentUser={currentUser}/>
         <ToastProvider />
-      </ClientOnly>
-      {children}
+      
+      <div className="pb-20 pt-28">
+        {children}
+      </div>
       </body>
     </html>
   );

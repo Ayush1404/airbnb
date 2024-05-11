@@ -17,7 +17,6 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
     value
 }) => {
     const handleUpload = useCallback((result : any)=>{
-        console.log(result)
         onChange(result.info.secure_url)
     },[onchange])
     return (
