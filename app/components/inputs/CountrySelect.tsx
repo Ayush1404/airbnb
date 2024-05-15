@@ -10,7 +10,7 @@ export type CountrySelectValue = {
 }
 
 type CountrySelectProps = {
-    value : CountrySelectValue,
+    value?: CountrySelectValue,
     onChange : (value :CountrySelectValue) => void
 }
 const CountrySelect:React.FC<CountrySelectProps> = ({
