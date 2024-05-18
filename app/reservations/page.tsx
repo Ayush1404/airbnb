@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { getCurrentUser } from "../actions/getCurrentUser"
 import getReservations from "../actions/getReservations"
 import EmptyState from "../components/EmptyState"
@@ -26,10 +27,14 @@ const ReservationPage = async () => {
         />
     )
     return (
+        <Suspense>
+            
+        
         <ReservationClient 
             reservations={reservations}
             currentUser={currentUser}
         />
+        </Suspense>
     )
 }
 

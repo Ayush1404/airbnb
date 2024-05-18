@@ -1,6 +1,6 @@
 'use client'
 import { useRouter, useSearchParams } from 'next/navigation'
-import React, { useCallback } from 'react'
+import React, { Suspense, useCallback } from 'react'
 import { IconType } from 'react-icons'
 import qs from 'query-string'
 type CategoryBoxProps={
@@ -30,6 +30,7 @@ const CategoryBox:React.FC<CategoryBoxProps> = ({
         router.push(url)
     },[label,params,router])
     return (
+        <Suspense>
         <div 
             onClick={handleClick}
             className={
@@ -49,6 +50,7 @@ const CategoryBox:React.FC<CategoryBoxProps> = ({
             <Icon size={26} />
             <div className='font-medium text-sm'>{label}</div>
         </div>
+        </Suspense>
     )
 }
 

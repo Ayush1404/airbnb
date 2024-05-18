@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { getCurrentUser } from "../actions/getCurrentUser"
 import getFavoriteListings from "../actions/getFavoriteListings"
 import EmptyState from "../components/EmptyState"
@@ -24,10 +25,12 @@ const FavoritesPage = async () => {
         />
     )
     return (
+    <Suspense>
        <FavoritesClient
             listings={favorites}
             currentUser={currentUser}
        />
+       </Suspense>
     )
 }
 
