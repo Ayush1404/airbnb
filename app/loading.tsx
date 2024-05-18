@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Loader from './components/Loader'
 
 const Loading = () => {
   return (
-   <Loader />
+    <Suspense>
+      <Loader />
+    </Suspense>
+   
   )
 }
 
