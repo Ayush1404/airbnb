@@ -1,11 +1,9 @@
 'use client'
 import Container  from '../Container'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
-import Modal from '../modals/Modal'
-import { User } from '@prisma/client'
 import { SafeUser } from '@/app/types'
 import Categories from './Categories'
 
@@ -22,13 +20,18 @@ const Navbar:React.FC<NavBarProps> = ({
                 <div className='flex flex-row items-center justify-between gap-3 md:gap-0'>
                   
                     <Logo />
-                    <Search />
+                    <Suspense>
+                      <Search />
+                    </Suspense>
+                    
                     <UserMenu currentUser={currentUser}/>
                   
                 </div>
             </Container>
         </div>
-        <Categories />
+        <Suspense>
+          <Categories />
+        </Suspense>
     </div>
   )
 }

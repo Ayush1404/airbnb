@@ -1,4 +1,4 @@
-import { Suspense } from "react"
+
 import { getCurrentUser } from "../actions/getCurrentUser"
 import getFavoriteListings from "../actions/getFavoriteListings"
 import EmptyState from "../components/EmptyState"
@@ -10,27 +10,28 @@ const FavoritesPage = async () => {
     if(!currentUser)
     {
         return (
-            <EmptyState
-                title="Unautharized"
-                subtitle="Please login"    
-            />
+            
+                <EmptyState
+                    title="Unautharized"
+                    subtitle="Please login"    
+                />
         )   
     }
     const favorites = await getFavoriteListings()
 
     if(!favorites || favorites.length === 0 ) return(
-        <EmptyState 
-            title='No favorites found'
-            subtitle='Looks like you have no favorites listings'
-        />
+        
+            <EmptyState 
+                title='No favorites found'
+                subtitle='Looks like you have no favorites listings'
+            />
     )
     return (
-    <Suspense>
+    
        <FavoritesClient
             listings={favorites}
             currentUser={currentUser}
        />
-       </Suspense>
     )
 }
 

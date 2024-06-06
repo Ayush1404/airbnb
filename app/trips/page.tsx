@@ -1,4 +1,3 @@
-import React, { Suspense } from 'react'
 import { getCurrentUser } from '../actions/getCurrentUser'
 import EmptyState from '../components/EmptyState'
 import getReservations from '../actions/getReservations'
@@ -9,10 +8,12 @@ const TripsPage = async () => {
 
     if(!currentUser ){
         return (
+            
             <EmptyState 
                 title='Unautharized'
                 subtitle='Please login.'
             />
+            
         )
     }
     const reservations = await getReservations({
@@ -20,20 +21,22 @@ const TripsPage = async () => {
     })
 
     if(!reservations || reservations.length === 0 ) return(
+        
         <EmptyState 
             title='No trips found'
             subtitle='Looks like you have no trip reservations'
         />
+        
     )
     return (
-        <Suspense>
+        
         
             <TripsClient
                 reservations = {reservations}
                 currentUser = {currentUser}
             />
         
-        </Suspense>
+        
   )
 }
 

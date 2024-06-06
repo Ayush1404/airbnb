@@ -49,7 +49,7 @@ const useFavorite = ({
         }catch(err){
             toast.error('Something went wrong')
         }
-    },[currentUser,loginModal,hasFavorited,router,listingId,axios])
+    },[currentUser,loginModal,hasFavorited,router,listingId])
 
     return{ 
         hasFavorited,

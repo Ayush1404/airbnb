@@ -1,3 +1,4 @@
+'use client'
 import { Listing } from "@prisma/client"
 import { SafeUser } from "../types"
 import Container from "../components/Container"
